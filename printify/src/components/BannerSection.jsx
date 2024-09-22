@@ -3,7 +3,7 @@ import bannerImg from "../assets/banner-img.png";
 import { FaRegPlayCircle } from "react-icons/fa";
 import { IoCheckmarkOutline } from "react-icons/io5";
 import logo from "../assets/icon.svg";
-const MainBanner = () => {
+const BannerSection = () => {
   return (
     <div className="w-full mt-[71px] flex flex-col sm:flex-row max-w-[1440px] mx-auto px-5 sm:px-10 xl:px-20 items-center ">
       <div className="w-full self-center">
@@ -45,7 +45,7 @@ const MainBanner = () => {
       <div className="max-w-[500px] h-[500] p-5">
         <img src={bannerImg} className="w-full" alt="banner image" />
       </div>
-      <div className="fixed bottom-6 left-6 z-50  p-3 rounded-full shadow-3xl">
+      <div className="fixed bottom-6 left-6 z-50 bg-white  p-3 rounded-full shadow-3xl">
         <a href="#"><img src={logo} alt="brand logo" className="w-5 h-5" /></a>
         
       </div>
@@ -53,4 +53,4 @@ const MainBanner = () => {
   );
 };
 
-export default MainBanner;
+export default BannerSection;

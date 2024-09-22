@@ -8,7 +8,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
 
   return (
-    <nav className="fixed bg-white h-[71px] border-b w-full shadow-sm z-10">
+    <nav className="fixed bg-white h-[71px] border-b w-full shadow-sm z-50">
       <div className="flex justify-between max-w-[1440px] mx-auto px-5 sm:px-10 xl:px-20 items-center h-full w-full">
         <div className="h-full flex items-center cursor-pointer">
           <FiAlignJustify
