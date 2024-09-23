@@ -45,8 +45,8 @@ const BannerSection = () => {
       <div className="max-w-[500px] h-[500] p-5">
         <img src={bannerImg} className="w-full" alt="banner image" />
       </div>
-      <div className="fixed bottom-6 left-6 z-50 bg-white  p-3 rounded-full shadow-3xl">
-        <a href="#"><img src={logo} alt="brand logo" className="w-5 h-5" /></a>
+      <div className="fixed bottom-6 left-6 z-50  rounded-full shadow-3xl">
+        <a href="#"><img src={logo} alt="brand logo" className="w-12 h-12 bg-[#39B75D] rounded-full" /></a>
         
       </div>
     </div>

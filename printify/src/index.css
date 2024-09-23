@@ -51,5 +51,16 @@ body{
     .textBtn:hover{
         color: #39B75D;
     }
+    .talk-to-sales{
+        width: 100%;
+       
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: url(./assets/talk-to-sales-N2GDBAGC.svg) no-repeat center right padding-box, #e2f7e3;
+        background-size: contain;
+        background-clip: content-box;
+        border-radius: 20px;
+    }
    
 }

@@ -1,48 +1,99 @@
 import React, { useEffect, useState } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import { IoIosStar } from "react-icons/io";
+
 const Slider = ({ CardInf, location }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const handlePrev = () => {
-    setCurrentSlide(
-      currentSlide === 0 ? CardInf.length - 1 : currentSlide - 1
-    );
-  };
-  const handleNext = () => {
-    setCurrentSlide(
-      currentSlide === CardInf.length - 1 ? 0 : currentSlide + 1
-    );
-  };
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % CardInf.length);
-    }, 3000);
+  const [isHovered, setIsHovered] = useState(false);
+  let slideInterval;
 
-    return () => clearInterval(interval);
-  }, [CardInf.length]);
+  const handlePrev = () => {
+    setCurrentSlide(currentSlide === 0 ? CardInf.length - 1 : currentSlide - 1);
+  };
+
+  const handleNext = () => {
+    setCurrentSlide(currentSlide === CardInf.length - 1 ? 0 : currentSlide + 1);
+  };
+
+  const startSlideShow = () => {
+    slideInterval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % CardInf.length);
+    }, 1000);
+  };
+
+  const stopSlideShow = () => {
+    clearInterval(slideInterval);
+  };
+
+  useEffect(() => {
+    if (!isHovered) {
+      startSlideShow();
+    }
+
+    return () => {
+      stopSlideShow();
+    };
+  }, [CardInf.length, isHovered]);
+
   return (
-    <div className=" relative flex justify-center items-center w-full h-96  mb-10">
+    <div
+      className="relative flex justify-center items-center w-full h-96 mb-10"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <BsArrowLeftCircleFill
         onClick={handlePrev}
         color="#485256"
-        className=" cursor-pointer size-8 absolute left-4"
+        className="cursor-pointer size-8 absolute left-4"
       />
       {CardInf.length !== 0
         ? CardInf.map((item, index) => {
             return (
-              <div className={`${location !=="workSection"&& "bg-white", currentSlide === index ? "block" : "hidden" } w-80 flex flex-col items-center flex-wrap`}>
-                <img
-                  key={index}
-                  className="rounded w-40"
-                  src={item.imgUrl}
-                  alt="img"
-                />
-                {
-                    location ==="workSection" ? <div className="w-full flex flex-col items-center flex-wrap px-4">
-                        <h1 className="text-xl font-bold text-[#29ab51]">{item?.heading?.toUpperCase()}</h1>
-                        <h2 className="text-xl font-semibold">{item?.subHeading}</h2>
-                        <p>{item?.desc}</p>
-                    </div> : <div></div>
-                }
+              <div
+                key={index}
+                className={`${
+                  location !== "workSection"
+                    ? "bg-white max-w-[500px] rounded-lg p-5"
+                    : ""
+                } ${currentSlide === index ? "inline-block" : "hidden"}`}
+              >
+                <div
+                  className={`${
+                    location !== "workSection"
+                      ? "flex-row items-start gap-5 w-full"
+                      : "flex-col items-center w-80  flex-wrap"
+                  } flex`}
+                >
+                  <img className="rounded w-40" src={item.imgUrl} alt="img" />
+                  {location === "workSection" ? (
+                    <div className="w-full flex flex-col items-center flex-wrap px-4">
+                      <h1 className="text-xl font-bold text-[#29ab51]">
+                        {item?.heading?.toUpperCase()}
+                      </h1>
+                      <h2 className="text-xl font-semibold">
+                        {item?.subHeading}
+                      </h2>
+                      <p>{item?.desc}</p>
+                    </div>
+                  ) : (
+                    <div>
+                      <h1 className="text-2xl font-bold">{item?.name}</h1>
+                      <a className="text-[#29ab51]" href={item?.linkUrl}>
+                        {item?.linkTitle}
+                      </a>
+                      <div className="flex gap-1 text-yellow-300">
+                        {Array(item.noOfStar)
+                          .fill(0)
+                          .map((_, i) => (
+                            <IoIosStar size="24px" key={i} />
+                          ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+                {location !== "workSection" && (
+                  <p className="py-5">{item.review}</p>
+                )}
               </div>
             );
           })
@@ -50,9 +101,9 @@ const Slider = ({ CardInf, location }) => {
       <BsArrowRightCircleFill
         onClick={handleNext}
         color="#485256"
-        className="cursor-pointer size-8 absolute right-10 "
+        className="cursor-pointer size-8 absolute right-10"
       />
-      <span className=" absolute flex gap-2 bottom-1">
+      <span className="absolute flex gap-2 bottom-1">
         {CardInf.length !== 0
           ? CardInf.map((_, index) => (
               <button

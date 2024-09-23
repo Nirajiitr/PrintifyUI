@@ -5,7 +5,7 @@ import WorkSection from './WorkSection'
 import ConnectStoreSection from './ConnectStoreSection'
 import SaleStoreSection from './SaleStoreSection'
 import SocialProofSection from './SocialProofSection'
-import FinancialSection from './financialSection'
+import FinancialSection from './FinancialSection'
 
 const MainComponent = () => {
   return (

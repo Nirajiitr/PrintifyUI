@@ -5,7 +5,7 @@ import { IoLogoLinkedin } from "react-icons/io5";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaYoutube } from "react-icons/fa6";
 import FooterSection from "./FooterSection";
-
+ import {Integrations, Discover, Startselling, Printify} from "../data/footerData"
 const Footer = () => {
   return (
     <div className="w-full flex flex-col items-center bg-white">
@@ -33,75 +33,19 @@ const Footer = () => {
       <div className="w-full px-3 sm:px-10 xl:px-20 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 py-5">
         <FooterSection
           title="Integrations"
-          links={[
-            "Shopify",
-            "Etsy",
-            "eBay",
-            "Amazon",
-            "TikTok Shop",
-            "PrestaShop",
-            "BigCommerce",
-            "Wix",
-            "WooCommerce",
-            "Squarespace",
-            "Printify API",
-            "Printify Pop-Up Store",
-            "Shutterstock",
-          ]}
+          links={Integrations}
         />
         <FooterSection
           title="Discover"
-          links={[
-            "Blog",
-            "Guides",
-            "Products",
-            "Etsy print-on-demand",
-            "Shopify print-on-demand",
-            "Woocommerce print-on-demand",
-            "Wix print-on-demand",
-            "Squarespace print-on-demand",
-            "Make Your Own Shirt",
-            "Brands",
-            "Pricing",
-            "Shipping Rates",
-            "Mockup Generator",
-          ]}
+          links={Discover}
         />
         <FooterSection
           title="Start selling"
-          links={[
-            "Custom T-shirts",
-            "Custom Hoodies",
-            "Custom Mugs",
-            "Custom Socks",
-            "Custom Backpacks",
-            "Custom Branding",
-            "Sell on Etsy",
-            "Sell on Social Media",
-            "Free T-shirt Designs",
-            "Custom Products",
-            "Start a Clothing Line",
-            "Start POD Business",
-            "Bulk Orders",
-            "Transferring To Printify",
-          ]}
+          links={Startselling}
         />
         <FooterSection
           title="Printify"
-          links={[
-            "Print on Demand",
-            "Print Providers",
-            "Experts Program",
-            "Printify Express Delivery",
-            "Become a Partner",
-            "About",
-            "Jobs",
-            "Webinars",
-            "Podcast",
-            "Contact Us",
-            "Affiliate",
-            "POD Glossary",
-          ]}
+          links={Printify}
         />
       </div>
       <div className="w-screen bg-[#F7F7F7] flex flex-col justify-center items-center py-5 mt-5 gap-1">
