@@ -28,7 +28,7 @@ const ConnectStoreSection = () => {
       
         <div
           className={`absolute bg-[#18C75A] rounded-lg shadow-lg p-6 z-10 flex justify-center items-center w-24 h-24 ${
-            inView ? 'animate-flower-open' : 'opacity-0'
+            inView ? 'animate-closeToOpen' : 'opacity-0'
           }`}
         >
           <a href="#">
@@ -38,31 +38,31 @@ const ConnectStoreSection = () => {
 
         
         <div className="grid grid-cols-3 gap-4 lg:gap-16 sm:grid-cols-4 lg:grid-cols-5 max-w-6xl mx-auto">
-          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-flower-open' : 'opacity-0'}`}>
+          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-closeToOpen' : 'opacity-0'}`}>
             <img src={bigcommerce} alt="BigCommerce" className="w-12 h-12" />
           </div>
-          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-flower-open' : 'opacity-0'}`}>
+          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-closeToOpen' : 'opacity-0'}`}>
             <img src={squarespaceFIBF2RIF} alt="Squarespace" className="w-12 h-12" />
           </div>
-          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-flower-open' : 'opacity-0'}`}>
+          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-closeToOpen' : 'opacity-0'}`}>
             <img src={wixMWZCZDTE} alt="Wix" className="w-12 h-12" />
           </div>
-          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-flower-open' : 'opacity-0'}`}>
+          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-closeToOpen' : 'opacity-0'}`}>
             <img src={wooPGFAG65X} alt="WooCommerce" className="w-12 h-12" />
           </div>
-          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-flower-open' : 'opacity-0'}`}>
+          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-closeToOpen' : 'opacity-0'}`}>
             <img src={etsyMXXFYORZ} alt="Etsy" className="w-12 h-12" />
           </div>
-          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-flower-open' : 'opacity-0'}`}>
+          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-closeToOpen' : 'opacity-0'}`}>
             <img src={shopify3NAPXPBF} alt="Shopify" className="w-12 h-12" />
           </div>
-          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-flower-open' : 'opacity-0'}`}>
+          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-closeToOpen' : 'opacity-0'}`}>
             <img src={presta54F6AYUU} alt="PrestaShop" className="w-12 h-12" />
           </div>
-          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-flower-open' : 'opacity-0'}`}>
+          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-closeToOpen' : 'opacity-0'}`}>
             <span className="text-sm text-gray-700">And more</span>
           </div>
-          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-flower-open' : 'opacity-0'}`}>
+          <div className={`flex justify-center items-center bg-white rounded-lg shadow-lg p-4 w-24 h-24 ${inView ? 'animate-closeToOpen' : 'opacity-0'}`}>
             <span className="text-sm text-gray-700">API</span>
           </div>
         </div>

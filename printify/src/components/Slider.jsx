@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { IoIosStar } from "react-icons/io";
+import { useInView } from "react-intersection-observer";
 
 const Slider = ({ CardInf, location }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,28 +35,31 @@ const Slider = ({ CardInf, location }) => {
       stopSlideShow();
     };
   }, [CardInf.length, isHovered]);
-
+  const { ref, inView } = useInView({
+    threshold: 0.5, 
+    triggerOnce: true, 
+  });
   return (
-    <div
-      className="relative flex justify-center items-center w-full h-96 mb-10"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <BsArrowLeftCircleFill
+    <div className="relative flex justify-center items-center w-full h-96 mb-10">
+      <MdArrowBackIos
         onClick={handlePrev}
         color="#485256"
-        className="cursor-pointer size-8 absolute left-4"
+        className={`cursor-pointer size-8 bottom-0 absolute left-2 ${location === "workSection" && "xl:hidden"}`}
       />
       {CardInf.length !== 0
         ? CardInf.map((item, index) => {
             return (
-              <div
+              <div ref={ref}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
                 key={index}
                 className={`${
                   location !== "workSection"
                     ? "bg-white max-w-[500px] rounded-lg p-5"
                     : ""
-                } ${currentSlide === index ? "inline-block" : "hidden"}`}
+                } ${currentSlide === index ? "inline-block" : "hidden"} ${
+                  location === "workSection" && `xl:flex ${inView && "xl:animate-sliderBottom"}`
+                }`}
               >
                 <div
                   className={`${
@@ -98,12 +102,12 @@ const Slider = ({ CardInf, location }) => {
             );
           })
         : null}
-      <BsArrowRightCircleFill
+      <MdArrowForwardIos
         onClick={handleNext}
         color="#485256"
-        className="cursor-pointer size-8 absolute right-10"
+        className={`cursor-pointer size-8 bottom-0 absolute right-2 ${location === "workSection" && "xl:hidden"}`}
       />
-      <span className="absolute flex gap-2 bottom-1">
+      <span className={`absolute flex gap-2 bottom-1 ${location === "workSection" && "xl:hidden"}`}>
         {CardInf.length !== 0
           ? CardInf.map((_, index) => (
               <button

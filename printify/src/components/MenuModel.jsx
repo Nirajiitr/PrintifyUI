@@ -29,7 +29,7 @@ const MenuModel = ({ setMenu }) => {
     >
       <div
         onClick={handleInsideClick}
-        className="bg-white text-black w-[260px] flex flex-col h-full"
+        className="bg-white text-black w-[260px] flex flex-col h-full animate-slideright"
       >
         <div className="flex items-center justify-center border-b-[1px] border-[#e3e4e5] px-16 py-4 relative">
           <span className="font-bold text-xl">Menu</span>

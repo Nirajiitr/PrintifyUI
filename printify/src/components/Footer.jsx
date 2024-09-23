@@ -49,7 +49,7 @@ const Footer = () => {
         />
       </div>
       <div className="w-screen bg-[#F7F7F7] flex flex-col justify-center items-center py-5 mt-5 gap-1">
-        <div className="flex gap-3">
+        <div className="flex gap-5 text-sm sm:text-lg sm:gap-10 mb-3">
           <a href="#" className="textBtn">
             Intellectual Property Policy
           </a>
